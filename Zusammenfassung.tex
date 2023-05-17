@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[formats]{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+\title{Aufgabe 02}
+\author{Simon Kramer}
+
+\begin{document}
+	\maketitle
+	\section{Basics}
+	Mittelwert
+	\[\bar{x} = \sum_{i=1}^{n}(x_i) \]	
+	Varianz
+	\[{\sigma}^{2} = \frac{1}{n}*\sum_{i=1}^{n}(x_i - \bar{x})^2\]
+	Geschätzte Varianz
+	\[{s}^{2} = \frac{1}{n-1}*\sum_{i=1}^{n}(x_i - \bar{x})^2\]
+	\section{Faltung}
+	\subsection{Diskret}
+	\subsection{Stetig}
+	\subsection{Dichtetransformationssatz}
+	Es ist eine Funktion ''f'' gegeben und eine Funktion ''g''
+	\[h = {g}^{-1}\]
+	\[f = h' * f(h) * \mathbf{I}_\Omega \ \]
+	\section{Schätzer}
+	\subsection{Maximum-Likelihood-Methode}
+	Likelihood Funktion
+	\[L = f(x1) * ... * f(xn)\]
+	Einsetzten der Likelihood Funktion in den Logarithmus.
+	\[ log(L) = log(f_{x1})+...+log(f_{xn}) \]
+	Erste Ableitung bilden
+	\[\]
+	Zweite Ableitung bilden
+	\[\]
+	Notwendige Bedingung
+	\[\]
+	Hinreichende Bedingung
+	\[\]
+	Ergebnis
+	\[\]
+	\subsection{Momentenmethode}
+	\subsection{Kleinste-Quadrate-Methode (Regression)}
+	\[f(x)=a+b*x\]
+	\[b = \frac{\sum_{i=1}^{n}(x_i y_i)-n\bar{x}\bar{y}}{\sum_{i=1}^{n}(y^2)-n\bar{y}^2}\]
+	\[a=\bar{y}-b*\bar{x}\]
+	\section{Konfidenz Intervall}
+	Erwartungswert
+	\[[\bar{x}-z_{1-\alpha/2}*\frac{\sigma}{\sqrt{n}};\bar{x}+z_{1-\alpha/2}*\frac{\sigma}{\sqrt{n}}]\]
+	Varianz
+	\[[\frac{(n-1*S^2)}{q_{1-a/2}};\frac{(n-1*S^2)}{q_{a/2}}]\]
+	\section{Hypothesen Tests}
+	\[v=\sqrt{n}*\frac{\bar{x}-h_0}{\sigma}\]
+	\[p=2*(1-\phi(|v|))\]
+
+\end{document}
+
+
+
