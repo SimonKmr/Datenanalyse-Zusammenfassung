@@ -2,17 +2,20 @@
 \usepackage[formats]{listings}
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
+\usepackage{amssymb}
 
-\title{Aufgabe 02}
+\title{Datenanalyse}
 \author{Simon Kramer}
 
 \begin{document}
 	\maketitle
 	\section{Basics}
-	Mittelwert
+	Mittelwert (diskret/stetig)
 	\[\bar{x} = \sum_{i=1}^{n}(x_i) \]	
-	Varianz
+	\[\mathbb{E}[X]=\int_{-\infty}^{\infty} (f(x)*x) dx\]
+	Varianz (diskret/stetig)
 	\[{\sigma}^{2} = \frac{1}{n}*\sum_{i=1}^{n}(x_i - \bar{x})^2\]
+	\[{\sigma}^{2} = \mathbb{E}(X^2)-(\mathbb{E}(X))^2\]
 	Geschätzte Varianz
 	\[{s}^{2} = \frac{1}{n-1}*\sum_{i=1}^{n}(x_i - \bar{x})^2\]
 	\section{Faltung}
@@ -21,8 +24,15 @@
 	\subsection{Dichtetransformationssatz}
 	Es ist eine Funktion ''f'' gegeben und eine Funktion ''g''
 	\[h = {g}^{-1}\]
-	\[f = h' * f(h) * \mathbf{I}_\Omega \ \]
+	\[f = h' * f(h) * \mathbb{I}_\Omega \ \]
 	\section{Schätzer}
+	To do...
+	\begin{itemize}
+		\item Erwartungstreue
+		\item Bias
+		\item MSE
+		\item Konsistenz von Schätzern
+	\end{itemize}
 	\subsection{Maximum-Likelihood-Methode}
 	Likelihood Funktion
 	\[L = f(x1) * ... * f(xn)\]
@@ -39,6 +49,9 @@
 	Ergebnis
 	\[\]
 	\subsection{Momentenmethode}
+	Erwartungswert berechnen und mit dem Empirischen Wert gleichsetzten
+	\[\mathbb{E}[X]=\bar{x}\]
+	
 	\subsection{Kleinste-Quadrate-Methode (Regression)}
 	\[f(x)=a+b*x\]
 	\[b = \frac{\sum_{i=1}^{n}(x_i y_i)-n\bar{x}\bar{y}}{\sum_{i=1}^{n}(y^2)-n\bar{y}^2}\]
@@ -49,8 +62,29 @@
 	Varianz
 	\[[\frac{(n-1*S^2)}{q_{1-a/2}};\frac{(n-1*S^2)}{q_{a/2}}]\]
 	\section{Hypothesen Tests}
+	To do...
+	\begin{itemize}
+		\item ab 6.4 unvollständig 
+	\end{itemize}
 	\[v=\sqrt{n}*\frac{\bar{x}-h_0}{\sigma}\]
+	Einstichprobentest (Bernoulli Experiment)
+	\[v=\sqrt{n}*\frac{\bar{x}-p_0}{\sqrt{q*(1-q)}}\]
+	\linebreak 
 	\[p=2*(1-\phi(|v|))\]
+	phi ist eine Verteilungsfunktion.
+	\linebreak
+	Entscheidungsregeln (bekanntes $\sigma$):
+	\begin{itemize}
+		\item $H_0 : \mu = \mu_0$ vs $H_1 : \mu \ne \mu_0$ : $H_0$ wird abgelehnt, falls $|v| > z_{1-\alpha/2}$
+		\item $H_0 : \mu \ge \mu_0$ vs $H_1 : \mu < \mu_0$ : $H_0$ wird abgelehnt, falls $v < z_{\alpha}$
+		\item $H_0 : \mu \le \mu_0$ vs $H_1 : \mu > \mu_0$ : $H_0$ wird abgelehnt, falls $v > z_{1-\alpha}$
+	\end{itemize}
+	Entscheidungsregeln (unbekanntes $\sigma$):
+	\begin{itemize}
+		\item $H_0 : \mu = \mu_0$ vs $H_1 : \mu \ne \mu_0$ : $H_0$ wird abgelehnt, falls $|v| > t_{1-\alpha/2}$
+		\item $H_0 : \mu \ge \mu_0$ vs $H_1 : \mu < \mu_0$ : $H_0$ wird abgelehnt, falls $v < t_{\alpha}$
+		\item $H_0 : \mu \le \mu_0$ vs $H_1 : \mu > \mu_0$ : $H_0$ wird abgelehnt, falls $v > t_{1-\alpha}$
+	\end{itemize}
 
 \end{document}
 
